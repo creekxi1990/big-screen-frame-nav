@@ -1,0 +1,18 @@
+.el-dropdown-menu {
+  border: 0;
+  background: linear-gradient(0deg,rgba(66,71,89,.8),rgba(21,22,31,.8));
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.35);
+  .popper__arrow {
+    display: none;
+  }
+  .el-dropdown-menu__item {
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0 15px;
+    &:focus, &:not(.is-disabled):hover {
+      background: url("../../assets/pageTitle/itembg.png") no-repeat;
+      color: #fff;
+    }
+  }
+}

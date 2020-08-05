@@ -1,0 +1,256 @@
+@import "element-ui-reset";
+html,body{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  overflow: hidden;
+  font-family: "Microsoft YaHei";
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+ul,li{
+  text-decoration: none;
+  list-style: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+.mt-5{
+  margin-top: 10px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mt-15{
+  margin-top: 10px;
+}
+.mt-20{
+  margin-top: 10px;
+}
+
+@keyframes changeOpacity {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes changeOpacity2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.more-alarm-icon {
+  display: inline-block;
+  float: left;
+  width: 26px;
+  height: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 15px;
+  color: $color-font-2;
+  animation-name: changeOpacity;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  & + .more-alarm-icon {
+    animation-name: changeOpacity2;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+.nav-dropdown-menu {
+  &:before {
+    /*content: "";
+    width: 0;
+    height: 0;
+    //background: url("../../assets/public/triangle_sanjiao_before.png") no-repeat center center;
+    border-top: 10px solid #fff;
+    position: absolute;
+    left: 40px;
+    top: -26px;*/
+  }
+  position: relative;
+  margin-left: 130px;
+  width: 217px;
+  border: 1px solid $color-border-none;
+  border-radius: 4px;
+  background: linear-gradient(0deg, rgba(66, 71, 89, .8), rgba(21, 22, 31, .8));
+  padding: 8px 0;
+  .el-dropdown-menu__item {
+    font-size: 16px;
+    color: #FFFFFF;
+    height: 46px;
+    line-height: 46px;
+    padding: 0 12px;
+    min-width: 216px;
+    &:first-child {
+      .el-dropdown-item-inner {
+        border-top: 0;
+      }
+    }
+    &:focus, &:not(.is-disabled):hover {
+      background: url("../../assets/pageTitle/itembg.png") no-repeat;
+      color: #fff;
+      &:before {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 27px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        transform: translateY(10px);
+      }
+    }
+  }
+
+  .el-dropdown-item-inner {
+    border-top: 1px solid rgba(72, 85, 105, 1);
+  }
+
+  .el-dropdown-item-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .el-dropdown-item-title {
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 12px;
+  }
+}
+.user-dropdown{
+  margin-left: 0;
+}
+.znv-module-tab{
+  height: 100%;
+  &.el-tabs--card{
+    >.el-tabs__header{
+      border: 0;
+      margin: 0;
+      .el-tabs__nav{
+        border: 0;
+      }
+      .el-tabs__item{
+        border: 0;
+        color: #fff;
+        font-size: 18px;
+        padding-left: 12px;
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          background: $el-tabs-item-background;
+          transform: scaleY(1.3) perspective(1em) rotateX(5deg);
+          transform-origin: left;
+        }
+        &:nth-child(n+2) {
+          &::before {
+            transform: skewX(21deg) scaleY(1.3) perspective(0em) rotateX(0deg);
+          }
+        }
+        &.is-active:before{
+          background: $el-tabs-item-active-background
+        }
+      }
+    }
+    .el-tabs__content{
+      height: calc( 100% - 40px );
+    }
+    .el-tab-pane{
+      height: 100%;
+      border: 2px solid $el-tab-pane-border;
+      background: $el-tab-pane-background;
+      box-shadow: inset 3px 3px 32px 0 transparent;
+    }
+  }
+}
